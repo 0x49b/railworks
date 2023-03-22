@@ -1,3 +1,21 @@
-.root {
-    -fx-background-color: #57667f;
+.railworks {
+    -fx-background-color: #57667FFF;
+}
+
+.menu-bar{
+    -fx-background-color: #293C60FF;
+}
+
+.menu-button .label{
+    -fx-text-fill: white;
+}
+
+.menu-button:disabled .label{
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}
+
+.railworks-scrollpane .viewport{
+    -fx-background-color: #57667FFF;
+    -fx-border-color: transparent;
 }

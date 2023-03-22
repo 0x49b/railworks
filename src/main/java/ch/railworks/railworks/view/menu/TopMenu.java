@@ -6,7 +6,6 @@ import javafx.scene.control.MenuBar;
 
 public class TopMenu extends MenuBar {
 
-
     Menu appName;
     Menu system;
     Menu znzl;
@@ -21,36 +20,34 @@ public class TopMenu extends MenuBar {
         super();
 
         appName = new Menu("RailWorks");
-        appName.setDisable(true);
-        appName.getStyleClass().add("railworks-topmenu-appname");
+        appName.getStyleClass().addAll("railworks-topmenu-item", "railworks-topmenu-appname");
 
         system = new Menu("System");
-        system.getStyleClass().add("railworks-topmenu-system");
+        system.getStyleClass().addAll("railworks-topmenu-item", "railworks-topmenu-system");
 
         znzl = new Menu("ZN/ZL");
-        znzl.getStyleClass().add("railworks-topmenu-znzl");
+        znzl.getStyleClass().addAll("railworks-topmenu-item", "railworks-topmenu-znzl");
 
         zugdaten = new Menu("Zugdaten");
-        zugdaten.getStyleClass().add("railworks-topmenu-zugdaten");
+        zugdaten.getStyleClass().addAll("railworks-topmenu-item", "railworks-topmenu-zugdaten");
 
         gleismelder = new Menu("Gleismelder");
-        gleismelder.getStyleClass().add("railworks-topmenu-gleismelder");
+        gleismelder.getStyleClass().addAll("railworks-topmenu-item", "railworks-topmenu-gleismelder");
 
         ubersichtsbilder = new Menu("Übersichtsbilder");
-        ubersichtsbilder.getStyleClass().add("railworks-topmenu-ubersichtsbilder");
+        ubersichtsbilder.getStyleClass().addAll("railworks-topmenu-item", "railworks-topmenu-ubersichtsbilder");
 
         lupenbilder = new Menu("Lupenbilder");
-        lupenbilder.getStyleClass().add("railworks-topmenu-lupenbilder");
+        lupenbilder.getStyleClass().addAll("railworks-topmenu-item", "railworks-topmenu-lupenbilder");
 
         konfiguration = new Menu("Konfiguration");
-        konfiguration.getStyleClass().add("railworks-topmenu-konfiguration");
+        konfiguration.getStyleClass().addAll("railworks-topmenu-item", "railworks-topmenu-konfiguration");
 
         help = new Menu("?");
-        help.getStyleClass().add("railworks-topmenu-help");
+        help.getStyleClass().addAll("railworks-topmenu-item", "railworks-topmenu-help");
 
         getMenus().addAll(appName, system, znzl, zugdaten, gleismelder, ubersichtsbilder, lupenbilder, konfiguration, help);
-        getStyleClass().add("raileworks-topmenu");
-
+        getStyleClass().add("railworks-topmenu");
 
     }
 

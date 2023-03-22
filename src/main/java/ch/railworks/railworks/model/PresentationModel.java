@@ -1,22 +1,51 @@
 package ch.railworks.railworks.model;
 
+import ch.railworks.railworks.view.station.Station;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import lombok.Getter;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class PresentationModel {
+    private final StringProperty applicationTitle = new SimpleStringProperty("RailWorks");
+    private final StringProperty applicationVersion = new SimpleStringProperty("0.1");
+
+    @Getter
+    List<Station> allStations = new ArrayList<>();
+
+    @Getter
+    List<Station> addedStations = new ArrayList<>();
+
+    @Getter
+    List<Station> removedStations = new ArrayList<>();
 
     public String getApplicationTitle() {
         return applicationTitle.get();
     }
 
-    public StringProperty applicationTitleProperty() {
-        return applicationTitle;
+    public String getApplicationVersion() {
+        return applicationVersion.get();
     }
 
-    public void setApplicationTitle(String applicationTitle) {
-        this.applicationTitle.set(applicationTitle);
+    public void setApplicationVersion(String applicationVersion) {
+        this.applicationVersion.set(applicationVersion);
     }
 
-    private final StringProperty applicationTitle = new SimpleStringProperty("RailWorks");
+    public void addStation(Station station){
+        addedStations.add(station);
+    }
+
+    public void mergeStations() {
+        allStations.addAll(addedStations);
+        allStations.removeAll(removedStations);
+
+        addedStations.clear();
+        removedStations.clear();
+    }
+
+
 
 }
