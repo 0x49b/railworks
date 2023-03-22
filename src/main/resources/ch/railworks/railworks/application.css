@@ -17,5 +17,12 @@
 
 .railworks-scrollpane .viewport{
     -fx-background-color: #57667FFF;
-    -fx-border-color: transparent;
+}
+.railworks-station{
+    -fx-border-width: 2;
+    -fx-border-color: white;
+}
+
+.railworks-station-label{
+    -fx-text-fill: white;
 }

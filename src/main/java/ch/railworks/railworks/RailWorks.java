@@ -13,6 +13,7 @@ import javafx.scene.ImageCursor;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -40,10 +41,16 @@ public class RailWorks extends Application {
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
 
+        addStationElements();
+
         root = new BorderPane();
         root.getStyleClass().add("railworks");
         root.setTop(tm);
-        root.setCenter(workarea.getScrollPane());
+
+        Pane p = new Pane();
+        p.getChildren().add(pm.getAllStations().get(0));
+
+        root.setCenter(p);
 
 
         Scene scene = new Scene(root, 1024, 768);
@@ -56,23 +63,16 @@ public class RailWorks extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-        addStationElements();
-
         timeline.play();
     }
 
 
-    private void addStationElements(){
-
+    private void addStationElements() {
         workarea.preUpdate();
-
         Station station = new Station("Doppleschwand-Rom._SiC", "DOPP", 273, 909);
         pm.addStation(station);
-
         workarea.update();
-
     }
-
 
 
     public static void main(String[] args) {

@@ -36,6 +36,7 @@ public class PresentationModel {
 
     public void addStation(Station station){
         addedStations.add(station);
+        allStations.add(station);
     }
 
     public void mergeStations() {
