@@ -32,7 +32,7 @@ public class MouseGestures {
         double offsetY = event.getScreenY() + dragContext.y;
 
         /*
-         * Constrain to maximum of ScrollPane
+         * Constrain to maximum of ParentNode
          */
         if(offsetX < 0.0) offsetX = 0.0;
         if(offsetY < 0.0) offsetY = 0.0;
