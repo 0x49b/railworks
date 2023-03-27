@@ -45,9 +45,4 @@ public class MouseGestures {
     EventHandler<MouseEvent> onMouseReleasedEventHandler = event -> {
     };
 
-
-    class DragContext {
-        double x;
-        double y;
-    }
 }

@@ -21,7 +21,7 @@ public class Station extends GridPane {
     private String stationName;
     private String stationCode;
 
-    private GridPane topBar;
+    private StationTopBar topBar;
 
     private final int gridSize = 25;
 
@@ -34,29 +34,7 @@ public class Station extends GridPane {
 
         setPrefSize(width, height);
 
-        topBar = new GridPane();
-        topBar.setBackground(new Background(new BackgroundFill(Color.web("#1C65C0FF"), CornerRadii.EMPTY, Insets.EMPTY)));
-
-        topBar.setMaxHeight(25);
-        topBar.setPrefHeight(25);
-        topBar.setPrefWidth(width);
-        topBar.getColumnConstraints().add(new ColumnConstraints(20));
-        topBar.setVgap(5);
-        topBar.setHgap(5);
-        topBar.setPadding(new Insets(5));
-
-        Image stationImage = new Image(Objects.requireNonNull(getClass().getResource("lupenbild-icon.png")).toExternalForm());
-
-        ImageView stationImageView = new ImageView();
-        stationImageView.setImage(stationImage);
-        stationImageView.setFitHeight(20);
-        stationImageView.setFitWidth(20);
-
-        topBar.add(stationImageView, 0,0);
-
-        Label stationNameLabel = new Label(stationName + " ("+stationCode+")");
-        stationNameLabel.getStyleClass().add("railworks-station-label");
-        topBar.add(stationNameLabel, 1, 0);
+        topBar = new StationTopBar(stationName, stationCode, width);
 
         for(int i = 0; i < Math.floor(height/gridSize); i++){
             getColumnConstraints().add(new ColumnConstraints(gridSize));
