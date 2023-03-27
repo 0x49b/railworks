@@ -1,9 +1,22 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath "gradle.plugin.com.github.johnrengelman:shadow:7.1.2"
+    }
+}
+
 plugins {
     id 'java'
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.13'
-    id 'org.beryx.jlink' version '2.25.0'
+    id 'org.beryx.jlink' version '2.26.0'
 }
+
+apply plugin: 'java'
+apply plugin: 'com.github.johnrengelman.shadow'
 
 group 'ch.railworks'
 version '1.0-SNAPSHOT'
@@ -72,3 +85,17 @@ jlink {
 jlinkZip {
     group = 'distribution'
 }
+
+
+task customFatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'ch.railworks.railworks.RailWorks'
+    }
+    baseName = 'all-in-one-jar'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+
+
