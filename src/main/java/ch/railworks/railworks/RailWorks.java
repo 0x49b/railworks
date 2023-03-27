@@ -48,6 +48,7 @@ public class RailWorks extends Application {
         root.setTop(tm);
 
         Pane p = new Pane();
+        pm.setWorkPane(p);
         p.getChildren().add(pm.getAllStations().get(0));
 
         root.setCenter(p);

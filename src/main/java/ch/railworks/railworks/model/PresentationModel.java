@@ -3,7 +3,9 @@ package ch.railworks.railworks.model;
 import ch.railworks.railworks.view.station.Station;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.scene.layout.Pane;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +24,10 @@ public class PresentationModel {
     @Getter
     List<Station> removedStations = new ArrayList<>();
 
+    @Getter
+    @Setter
+    Pane workPane;
+
     public String getApplicationTitle() {
         return applicationTitle.get();
     }
@@ -34,7 +40,7 @@ public class PresentationModel {
         this.applicationVersion.set(applicationVersion);
     }
 
-    public void addStation(Station station){
+    public void addStation(Station station) {
         addedStations.add(station);
         allStations.add(station);
     }
@@ -46,7 +52,6 @@ public class PresentationModel {
         addedStations.clear();
         removedStations.clear();
     }
-
 
 
 }

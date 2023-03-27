@@ -19,10 +19,19 @@
     -fx-background-color: #57667FFF;
 }
 .railworks-station{
-    -fx-border-width: 2;
-    -fx-border-color: white;
+    -fx-border-width: 3;
+    -fx-border-color: #6D92C0FF #05204DFF #6D92C0FF #05204DFF; /*t r b l*/
 }
 
 .railworks-station-label{
     -fx-text-fill: white;
 }
+
+
+
+/**
+   --color-border-right-bottom-inactive : hsla(217, 88%, 16%, 1.0);
+    --color-border-left-top-inactive     : hsla(213, 40%, 59%, 1.0);
+    --color-border-right-bottom-active   : var(--color-border-left-top-inactive);
+    --color-border-left-top-active       : var(--color-border-right-bottom-inactive);
+ */
