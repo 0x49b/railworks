@@ -1,16 +1,12 @@
 package ch.railworks.railworks.view.station;
 
+import ch.railworks.railworks.view.controls.StationCode;
 import javafx.geometry.Insets;
-import javafx.scene.ImageCursor;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Objects;
 import java.util.UUID;
 
 @Getter
@@ -22,6 +18,7 @@ public class Station extends GridPane {
     private String stationCode;
 
     private StationTopBar topBar;
+    private StationMenuBar menuBar;
 
     private final int gridSize = 25;
 
@@ -35,15 +32,22 @@ public class Station extends GridPane {
         setPrefSize(width, height);
 
         topBar = new StationTopBar(stationName, stationCode, width);
+        menuBar = new StationMenuBar();
 
-        for(int i = 0; i < Math.floor(height/gridSize); i++){
+        for (int i = 0; i < Math.floor(height / gridSize); i++) {
             getColumnConstraints().add(new ColumnConstraints(gridSize));
         }
 
-        add(topBar, 0, 0, (int) Math.ceil(width/gridSize), 1);
+        add(topBar, 0, 0, (int) Math.ceil(width / gridSize), 1);
+        add(menuBar, 0, 1, (int) Math.ceil(width / gridSize), 1);
 
         setBackground(new Background(new BackgroundFill(Color.web("#000000"), CornerRadii.EMPTY, Insets.EMPTY)));
         getStyleClass().add("railworks-station");
+
+        // Elements of Station from Row 2 on
+        StationCode sCode = new StationCode(stationCode);
+
+        add(sCode, 25, 3);
 
     }
 

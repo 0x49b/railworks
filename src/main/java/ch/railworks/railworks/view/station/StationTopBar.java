@@ -1,6 +1,7 @@
 package ch.railworks.railworks.view.station;
 
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -41,8 +42,8 @@ public class StationTopBar extends HBox {
         Image closeImage = new Image(Objects.requireNonNull(getClass().getResource("close.png")).toExternalForm());
         ImageView closeImageView = new ImageView();
         closeImageView.setImage(closeImage);
-        closeImageView.setFitHeight(COLUM_CONSTRAINT-10);
-        closeImageView.setFitWidth(COLUM_CONSTRAINT-10);
+        closeImageView.setFitHeight(COLUM_CONSTRAINT-5);
+        closeImageView.setFitWidth(COLUM_CONSTRAINT-5);
 
         Button closeButton = new Button();
         closeButton.setGraphic(closeImageView);
@@ -50,8 +51,15 @@ public class StationTopBar extends HBox {
         closeButton.setPrefWidth(SIZE);
         closeButton.setMaxHeight(SIZE);
         closeButton.setMaxWidth(SIZE);
+        closeButton.setBackground(new Background(new BackgroundFill(Color.web("#293C60FF"), CornerRadii.EMPTY, Insets.EMPTY)));
 
-        getChildren().addAll(stationImageView, stationNameLabel, closeButton);
+        Region spacerBig = new Region();
+        setHgrow(spacerBig, Priority.ALWAYS);
+        Region spacerSmall = new Region();
+        spacerSmall.setPrefWidth(INSETS);
+
+        setAlignment(Pos.CENTER_LEFT);
+        getChildren().addAll(stationImageView, spacerSmall, stationNameLabel, spacerBig,closeButton);
 
 
         /**
