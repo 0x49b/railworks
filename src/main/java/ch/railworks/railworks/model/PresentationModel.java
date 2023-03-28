@@ -4,28 +4,25 @@ import ch.railworks.railworks.view.station.Station;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.layout.Pane;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class PresentationModel {
-    private final StringProperty applicationTitle = new SimpleStringProperty("RailWorks");
+    private final StringProperty applicationTitle   = new SimpleStringProperty("RailWorks");
     private final StringProperty applicationVersion = new SimpleStringProperty("0.1");
 
-    @Getter
+
     List<Station> allStations = new ArrayList<>();
 
-    @Getter
+
     List<Station> addedStations = new ArrayList<>();
 
-    @Getter
+
     List<Station> removedStations = new ArrayList<>();
 
-    @Getter
-    @Setter
+
     Pane workPane;
 
     public String getApplicationTitle() {
@@ -41,8 +38,8 @@ public class PresentationModel {
     }
 
     public void addStation(Station station) {
+
         addedStations.add(station);
-        allStations.add(station);
     }
 
     public void mergeStations() {
@@ -54,4 +51,47 @@ public class PresentationModel {
     }
 
 
+    public void setWorkPane(Pane p) {
+        workPane = p;
+    }
+
+    public StringProperty applicationTitleProperty() {
+        return applicationTitle;
+    }
+
+    public void setApplicationTitle(String applicationTitle) {
+        this.applicationTitle.set(applicationTitle);
+    }
+
+    public StringProperty applicationVersionProperty() {
+        return applicationVersion;
+    }
+
+    public List<Station> getAllStations() {
+        return allStations;
+    }
+
+    public void setAllStations(List<Station> allStations) {
+        this.allStations = allStations;
+    }
+
+    public List<Station> getAddedStations() {
+        return addedStations;
+    }
+
+    public void setAddedStations(List<Station> addedStations) {
+        this.addedStations = addedStations;
+    }
+
+    public List<Station> getRemovedStations() {
+        return removedStations;
+    }
+
+    public void setRemovedStations(List<Station> removedStations) {
+        this.removedStations = removedStations;
+    }
+
+    public Pane getWorkPane() {
+        return workPane;
+    }
 }

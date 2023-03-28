@@ -10,11 +10,10 @@ import java.util.UUID;
 
 public class Station extends GridPane {
 
-    private UUID uid;
     private String stationName;
     private String stationCode;
 
-    private StationTopBar topBar;
+    private StationTopBar  topBar;
     private StationMenuBar menuBar;
 
     private final int gridSize = 25;
@@ -22,13 +21,12 @@ public class Station extends GridPane {
     public Station(String stationName, String stationCode, double height, double width) {
         super();
 
-        this.uid = UUID.randomUUID();
         this.stationName = stationName;
         this.stationCode = stationCode;
 
         setPrefSize(width, height);
 
-        topBar = new StationTopBar(stationName, stationCode, width);
+        topBar  = new StationTopBar(stationName, stationCode, width);
         menuBar = new StationMenuBar();
 
         for (int i = 0; i < Math.floor(height / gridSize); i++) {
@@ -45,7 +43,31 @@ public class Station extends GridPane {
         StationCode sCode = new StationCode(stationCode);
 
         add(sCode, 0, 3);
-
     }
 
+    public String toString() {
+        return stationName + " (" + stationCode + ")" + " [" + hashCode() + "]";
+    }
+
+
+
+    public String getStationName() {
+        return stationName;
+    }
+
+    public String getStationCode() {
+        return stationCode;
+    }
+
+    public StationTopBar getTopBar() {
+        return topBar;
+    }
+
+    public StationMenuBar getMenuBar() {
+        return menuBar;
+    }
+
+    public int getGridSize() {
+        return gridSize;
+    }
 }

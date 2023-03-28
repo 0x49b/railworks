@@ -4,9 +4,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import lombok.Getter;
 
-@Getter
+
 public class StationCode extends AbstractControl {
 
     private final String stationCode;

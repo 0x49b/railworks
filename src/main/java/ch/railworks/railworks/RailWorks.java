@@ -21,24 +21,23 @@ import java.util.Objects;
 
 public class RailWorks extends Application {
 
-    BorderPane root;
+    BorderPane        root;
     PresentationModel pm;
-    Timeline timeline;
-    Workarea workarea;
-    TopMenu tm;
+    Timeline          timeline;
+    Workarea          workarea;
+    TopMenu           tm;
 
 
     @Override
     public void start(Stage primaryStage) {
 
         CSSFX.start();
-        tm = new TopMenu();
 
-        pm = new PresentationModel();
+        pm       = new PresentationModel();
         workarea = new Workarea(pm);
-        timeline = new Timeline(new KeyFrame(Duration.millis(100), event -> {
-            workarea.update();
-        }));
+        tm       = new TopMenu(workarea);
+        timeline = new Timeline(new KeyFrame(Duration.millis(100), event -> workarea.update()));
+
         timeline.setCycleCount(Animation.INDEFINITE);
 
         addStationElements();
@@ -49,8 +48,9 @@ public class RailWorks extends Application {
 
         Pane p = new Pane();
         pm.setWorkPane(p);
-        p.getChildren().add(pm.getAllStations().get(0));
+        p.getChildren().addAll(pm.getAllStations());
 
+        pm.setWorkPane(p);
         root.setCenter(p);
 
 
@@ -70,15 +70,17 @@ public class RailWorks extends Application {
 
     private void addStationElements() {
         workarea.preUpdate();
+
         Station station = new Station("Doppleschwand-Rom._SiC", "DOPP", 273, 909);
         pm.addStation(station);
+
         workarea.update();
     }
 
 
-    // public static void main(String[] args) {
-    //     launch(args);
-    // }
+    public static void main(String[] args) {
+        launch(args);
+    }
 
 
 }
