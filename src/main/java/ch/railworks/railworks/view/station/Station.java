@@ -4,13 +4,10 @@ import ch.railworks.railworks.view.controls.StationCode;
 import javafx.geometry.Insets;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.UUID;
 
-@Getter
-@Setter
+
 public class Station extends GridPane {
 
     private UUID uid;
@@ -47,7 +44,7 @@ public class Station extends GridPane {
         // Elements of Station from Row 2 on
         StationCode sCode = new StationCode(stationCode);
 
-        add(sCode, 25, 3);
+        add(sCode, 0, 3);
 
     }
 
