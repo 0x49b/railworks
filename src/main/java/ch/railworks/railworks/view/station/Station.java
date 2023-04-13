@@ -50,7 +50,6 @@ public class Station extends GridPane {
     }
 
 
-
     public String getStationName() {
         return stationName;
     }

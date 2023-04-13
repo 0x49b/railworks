@@ -49,7 +49,7 @@ public class Workarea {
         getWorkareaLayer().getChildren().removeAll(pm.getRemovedStations());
 
         for (Station s : pm.getAllStations()) {
-            mouseGestures.makeDraggable(s);
+            mouseGestures.makeDraggableHandle(s.getTopBar());
         }
 
         pm.mergeStations();

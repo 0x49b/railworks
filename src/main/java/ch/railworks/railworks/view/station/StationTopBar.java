@@ -14,7 +14,7 @@ import java.util.Objects;
 public class StationTopBar extends HBox {
 
     private final int SIZE = 20;
-    private final int INSETS = 5;
+    private final int INSETS = 2;
     private final int COLUM_CONSTRAINT = SIZE-INSETS;
 
 
@@ -41,8 +41,8 @@ public class StationTopBar extends HBox {
         Image closeImage = new Image(Objects.requireNonNull(getClass().getResource("close.png")).toExternalForm());
         ImageView closeImageView = new ImageView();
         closeImageView.setImage(closeImage);
-        closeImageView.setFitHeight(COLUM_CONSTRAINT-5);
-        closeImageView.setFitWidth(COLUM_CONSTRAINT-5);
+        closeImageView.setFitHeight(COLUM_CONSTRAINT-(5+INSETS));
+        closeImageView.setFitWidth(COLUM_CONSTRAINT-(5+INSETS));
 
         Button closeButton = new Button();
         closeButton.setGraphic(closeImageView);
