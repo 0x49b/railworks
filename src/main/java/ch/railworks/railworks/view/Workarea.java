@@ -3,6 +3,7 @@ package ch.railworks.railworks.view;
 import ch.railworks.railworks.model.PresentationModel;
 import ch.railworks.railworks.utils.MouseGestures;
 import ch.railworks.railworks.view.station.Station;
+import ch.railworks.railworks.view.window.BaseWindow;
 import javafx.scene.Group;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Pane;
@@ -29,11 +30,21 @@ public class Workarea {
         scrollPane.setFitToHeight(true);
         scrollPane.setFitToWidth(true);
 
+
+        BaseWindow w = new BaseWindow();
+        w.setHeight(10);
+        w.setWidth(10);
+        w.setTitle("Blello");
+
     }
 
-    public ScrollPane getScrollPane() { return this.scrollPane; }
+    public ScrollPane getScrollPane() {
+        return this.scrollPane;
+    }
 
-    public Pane getWorkareaLayer() { return this.workareaLayer; }
+    public Pane getWorkareaLayer() {
+        return this.workareaLayer;
+    }
 
     public PresentationModel getModel() {
         return this.pm;
