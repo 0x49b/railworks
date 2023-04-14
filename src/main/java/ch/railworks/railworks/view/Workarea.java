@@ -3,7 +3,6 @@ package ch.railworks.railworks.view;
 import ch.railworks.railworks.model.PresentationModel;
 import ch.railworks.railworks.utils.MouseGestures;
 import ch.railworks.railworks.view.station.Station;
-import ch.railworks.railworks.view.window.BaseWindow;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.ScrollPane;

@@ -1,6 +1,5 @@
 package ch.railworks.railworks.model;
 
-import ch.railworks.railworks.view.station.Station;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.Node;

@@ -1,6 +1,5 @@
 package ch.railworks.railworks.view.window;
 
-import ch.railworks.railworks.model.PresentationModel;
 import ch.railworks.railworks.utils.MouseGestures;
 import ch.railworks.railworks.view.Workarea;
 import javafx.geometry.Insets;

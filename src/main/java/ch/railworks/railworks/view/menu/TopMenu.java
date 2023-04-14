@@ -8,10 +8,8 @@ import javafx.scene.Node;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
-import javafx.scene.input.MouseButton;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class TopMenu extends MenuBar {
 
