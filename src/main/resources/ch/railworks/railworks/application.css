@@ -19,11 +19,11 @@
     -fx-background-color: #57667FFF;
 }
 
-.railworks-station {
+.railworks-station, .railworks-window {
     -fx-border-width: 1.5;
     -fx-border-color: #6D92C0FF #05204DFF #05204DFF #6D92C0FF; /*t r b l*/
 }
 
-.railworks-station-label {
+.railworks-station-label, .railworks-window-label {
     -fx-text-fill: white;
 }

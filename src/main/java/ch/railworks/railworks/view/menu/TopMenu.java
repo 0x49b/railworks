@@ -4,6 +4,7 @@ package ch.railworks.railworks.view.menu;
 import ch.railworks.railworks.model.PresentationModel;
 import ch.railworks.railworks.view.Workarea;
 import ch.railworks.railworks.view.station.Station;
+import javafx.scene.Node;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -87,8 +88,8 @@ public class TopMenu extends MenuBar {
 
             wa.update();
 
-            List<Station> stationList = pm.getAllStations();
-            for(Station s: stationList){
+            List<Node> stationList = pm.getAllStations();
+            for(Node s: stationList){
                 System.out.println(s);
             }
 

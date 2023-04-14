@@ -3,6 +3,7 @@ package ch.railworks.railworks.model;
 import ch.railworks.railworks.view.station.Station;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 
 import java.util.ArrayList;
@@ -13,14 +14,9 @@ public class PresentationModel {
     private final StringProperty applicationTitle   = new SimpleStringProperty("RailWorks");
     private final StringProperty applicationVersion = new SimpleStringProperty("0.1");
 
-
-    List<Station> allStations = new ArrayList<>();
-
-
-    List<Station> addedStations = new ArrayList<>();
-
-
-    List<Station> removedStations = new ArrayList<>();
+    List<Node> allStations = new ArrayList<>();
+    List<Node> addedStations = new ArrayList<>();
+    List<Node> removedStations = new ArrayList<>();
 
 
     Pane workPane;
@@ -37,7 +33,7 @@ public class PresentationModel {
         this.applicationVersion.set(applicationVersion);
     }
 
-    public void addStation(Station station) {
+    public void addStation(Node station) {
 
         addedStations.add(station);
     }
@@ -67,27 +63,27 @@ public class PresentationModel {
         return applicationVersion;
     }
 
-    public List<Station> getAllStations() {
+    public List<Node> getAllStations() {
         return allStations;
     }
 
-    public void setAllStations(List<Station> allStations) {
+    public void setAllStations(List<Node> allStations) {
         this.allStations = allStations;
     }
 
-    public List<Station> getAddedStations() {
+    public List<Node> getAddedStations() {
         return addedStations;
     }
 
-    public void setAddedStations(List<Station> addedStations) {
+    public void setAddedStations(List<Node> addedStations) {
         this.addedStations = addedStations;
     }
 
-    public List<Station> getRemovedStations() {
+    public List<Node> getRemovedStations() {
         return removedStations;
     }
 
-    public void setRemovedStations(List<Station> removedStations) {
+    public void setRemovedStations(List<Node> removedStations) {
         this.removedStations = removedStations;
     }
 

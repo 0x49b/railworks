@@ -4,6 +4,7 @@ import ch.railworks.railworks.model.PresentationModel;
 import ch.railworks.railworks.view.Workarea;
 import ch.railworks.railworks.view.menu.TopMenu;
 import ch.railworks.railworks.view.station.Station;
+import ch.railworks.railworks.view.window.BaseWindow;
 import fr.brouillard.oss.cssfx.CSSFX;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
@@ -73,6 +74,10 @@ public class RailWorks extends Application {
 
         Station station = new Station("Doppleschwand-Rom._SiC", "DOPP", 273, 909);
         pm.addStation(station);
+
+
+        BaseWindow w = new BaseWindow(workarea).height(150).width(250).title("Blello").init();
+        pm.addStation(w);
 
         workarea.update();
     }

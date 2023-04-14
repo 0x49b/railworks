@@ -5,6 +5,7 @@ import ch.railworks.railworks.utils.MouseGestures;
 import ch.railworks.railworks.view.station.Station;
 import ch.railworks.railworks.view.window.BaseWindow;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Pane;
 
@@ -30,12 +31,6 @@ public class Workarea {
         scrollPane.setFitToHeight(true);
         scrollPane.setFitToWidth(true);
 
-
-        BaseWindow w = new BaseWindow();
-        w.setHeight(10);
-        w.setWidth(10);
-        w.setTitle("Blello");
-
     }
 
     public ScrollPane getScrollPane() {
@@ -59,8 +54,10 @@ public class Workarea {
         getWorkareaLayer().getChildren().addAll(pm.getAddedStations());
         getWorkareaLayer().getChildren().removeAll(pm.getRemovedStations());
 
-        for (Station s : pm.getAllStations()) {
-            mouseGestures.makeDraggableHandle(s.getTopBar());
+        for (Node s : pm.getAllStations()) {
+           if( s instanceof Station){
+               mouseGestures.makeDraggableHandle(((Station) s).getTopBar());
+           }
         }
 
         pm.mergeStations();

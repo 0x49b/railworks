@@ -1,9 +1,6 @@
 package ch.railworks.railworks.view.window;
 
-import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 import javafx.scene.Node;
 
 import java.util.ArrayList;
@@ -16,8 +13,10 @@ public class BaseWindowModel {
     private final StringProperty windowTitle = new SimpleStringProperty("");
     private final DoubleProperty windowHeight = new SimpleDoubleProperty(0d);
     private final DoubleProperty windowWidth = new SimpleDoubleProperty(0d);
+    private final BooleanProperty windowTopMenuEnabled = new SimpleBooleanProperty(false);
 
-    public BaseWindowModel() {}
+    public BaseWindowModel() {
+    }
 
     public String getWindowTitle() {
         return windowTitle.get();
@@ -30,7 +29,6 @@ public class BaseWindowModel {
     public void setWindowTitle(String windowTitle) {
         this.windowTitle.set(windowTitle);
     }
-
 
     public double getWindowHeight() {
         return windowHeight.get();
@@ -54,6 +52,18 @@ public class BaseWindowModel {
 
     public void setWindowWidth(double windowWidth) {
         this.windowWidth.set(windowWidth);
+    }
+
+    public boolean isWindowTopMenuEnabled() {
+        return windowTopMenuEnabled.get();
+    }
+
+    public BooleanProperty windowTopMenuEnabledProperty() {
+        return windowTopMenuEnabled;
+    }
+
+    public void setWindowTopMenuEnabled(boolean windowTopMenuEnabled) {
+        this.windowTopMenuEnabled.set(windowTopMenuEnabled);
     }
 
     public void addElement(Node element) {

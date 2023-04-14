@@ -37,6 +37,7 @@ public class BaseTopBar extends HBox {
     }
 
     public void initializeSelf() {
+        setBackground(new Background(new BackgroundFill(Color.web("#1C65C0FF"), CornerRadii.EMPTY, Insets.EMPTY)));
         getStyleClass().add("railworks-window");
     }
 
