@@ -4,28 +4,33 @@ import javafx.scene.layout.GridPane;
 
 public class BaseWindow extends GridPane {
 
-    private double height;
-    private double width;
-
-    private String title;
-
     private final BaseWindowModel bwm;
+    private final int GRID_SIZE = 25;
 
     public BaseWindow() {
         super();
-        this.bwm= new BaseWindowModel();
+        this.bwm = new BaseWindowModel();
     }
 
-
-    public void setHeight(double height) {
-        this.height = height;
+    public BaseWindow height(double height) {
+        bwm.setWindowHeight(height);
+        return this;
     }
 
-    public void setWidth(double width) {
-        this.width = width;
+    public BaseWindow width(double width) {
+        bwm.setWindowWidth(width);
+        return this;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public BaseWindow size(double width, double height) {
+        bwm.setWindowWidth(width);
+        bwm.setWindowHeight(height);
+        return this;
     }
+
+    public BaseWindow title(String title) {
+        bwm.setWindowTitle(title);
+        return this;
+    }
+
 }
